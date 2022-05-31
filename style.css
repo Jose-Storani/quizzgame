@@ -13,7 +13,7 @@ body{
     list-style: none;
     padding-left: 0;
     background-color: #079cff;
-    padding: 16px !important;
+    padding: 16px;
     margin-bottom: 16px;
     font-size: 24px;
     color: white
@@ -34,11 +34,11 @@ p.categoria{
 }
 
 .badge{
-    font-size: 32px;
+    font-size: 25px;
 
 }
 
 .btn-primary{
-    color: white !important;
+    color: white ;
     font-size: 24px;
 }

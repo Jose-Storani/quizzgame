@@ -35,10 +35,10 @@ mostrarPregunta = preguntas => {
         respuestasPosibles.splice(Math.floor(Math.random() * 3), 0, respuestaCorrecta);
 
         preguntaHTML.innerHTML = `<div class ="row justify-content-between heading">
-        <p class= "categoria> Categoria: ${pregunta.category} </p>
-        <div class="puntaje">
-        <span class ="badge badge-primary"> ${numeroCorrecto}</span>
-        <span class ="badge badge-warning"> ${numeroIncorrecto}</span>
+        <p class= "categoria"> Categoria: ${pregunta.category} </p>
+        <div class="puntaje text-center mb-2">
+        <span class ="badge text-bg-success"> ${numeroCorrecto}</span>
+        <span class ="badge text-bg-danger"> ${numeroIncorrecto}</span>
         </div>
         <div>
         <h2 class ="text-center"> ${pregunta.question};`
