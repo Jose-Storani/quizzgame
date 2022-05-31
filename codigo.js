@@ -54,6 +54,8 @@ mostrarPregunta = preguntas => {
             respuestaHTMl.classList.add("col-12", "col-md-5");
             respuestaHTMl.textContent = respuesta;
 
+            respuestaHTMl.onclick = seleccionarRespuesta;
+
 
 
             divRespuesta.appendChild(respuestaHTMl)
@@ -64,5 +66,13 @@ mostrarPregunta = preguntas => {
 
         document.querySelector("#aplicacion").appendChild(preguntaHTML);
     });
+}
+
+function seleccionarRespuesta (e) {
+    if(document.querySelector(".active")){
+        const respuestaActiva = document.querySelector(".active");
+        respuestaActiva.classList.remove("active");
+    }
+    e.target.classList.add("active");
 }
 
