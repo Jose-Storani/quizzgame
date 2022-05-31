@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 eventos = () => {
+    document.querySelector("#check").addEventListener("click", validarRespuesta)
 
 }
 
@@ -76,3 +77,39 @@ function seleccionarRespuesta (e) {
     e.target.classList.add("active");
 }
 
+validarRespuesta = () =>{
+    if(document.querySelector(".preguntas .active")){
+
+        verificarRespuesta();
+    }
+    else {
+        const divError = document.createElement("div");
+        divError.classList.add("alert", "alert-danger",   "col-md-6");
+        
+        divError.textContent = "Por favor, selecciona una opcion";
+        const preguntasDiv = document.querySelector(".preguntas");
+        preguntasDiv.appendChild(divError);
+
+        setTimeout(()=>{
+            document.querySelector(".alert-danger").remove();
+        },2000)
+    }
+}
+
+verificarRespuesta = () =>
+{
+    const respuestaUsuario = document.querySelector(".preguntas .active");
+    if(respuestaUsuario.textContent === respuestaCorrecta){
+        numeroCorrecto++;
+    }
+    else{
+        numeroIncorrecto++;
+    }
+
+    const aplicacion = document.querySelector("#aplicacion");
+    while(aplicacion.firstChild){
+        aplicacion.removeChild(aplicacion.firstChild);
+
+    }
+    agregarPregunta();
+}
